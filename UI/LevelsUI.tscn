@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/TextureButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Font.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Enemy/Fly.png" type="Texture" id=3]
+[ext_resource path="res://UI/LevelsUI.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.270588, 0.47451, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0.996078, 0.996078, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 2 )
+
+[node name="LevelsUI" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 30.0
+margin_right = -20.0
+margin_bottom = -20.3535
+custom_constants/vseparation = 20
+custom_constants/hseparation = 50
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" parent="Buttons" instance=ExtResource( 1 )]
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="TextureButton2" parent="Buttons" instance=ExtResource( 1 )]
+margin_left = 66.0
+margin_right = 82.0
+margin_bottom = 16.0
+
+[node name="TextureButton3" parent="Buttons" instance=ExtResource( 1 )]
+margin_left = 132.0
+margin_right = 148.0
+margin_bottom = 16.0
+
+[node name="TextureButton4" parent="Buttons" instance=ExtResource( 1 )]
+margin_left = 198.0
+margin_right = 214.0
+margin_bottom = 16.0
+
+[node name="TextureButton5" parent="Buttons" instance=ExtResource( 1 )]
+margin_top = 36.0
+margin_right = 16.0
+margin_bottom = 52.0
+
+[node name="TextureButton6" parent="Buttons" instance=ExtResource( 1 )]
+margin_left = 66.0
+margin_top = 36.0
+margin_right = 82.0
+margin_bottom = 52.0
+
+[node name="TextureButton7" parent="Buttons" instance=ExtResource( 1 )]
+margin_left = 132.0
+margin_top = 36.0
+margin_right = 148.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 193.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Arrow keys for movement.
+Arrow keys while holding shitf to move camera.
+You can hold only one item at a time."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 152.0
+margin_right = 260.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+pressed = true
+text = "Weird Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fly" type="Sprite" parent="."]
+position = Vector2( 240, 120 )
+texture = ExtResource( 3 )
+
+[node name="Fly" type="Sprite" parent="Fly"]
+position = Vector2( -128, -104 )
+texture = ExtResource( 3 )
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]

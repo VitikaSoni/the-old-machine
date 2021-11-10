@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/YouLoseUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/YouWinUI.gd" type="Script" id=2]
+
+[node name="YouWinUI" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Label" parent="." index="2"]
+text = "You Win"
+
+[node name="RetryButton" parent="." index="3"]
+text = "Next"

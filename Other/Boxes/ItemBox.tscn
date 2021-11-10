@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+
+onready var sprite=$Sprite
+onready var playerStats=get_node(\"../../Player/Stats\")
+onready var gameUI=get_node(\"../../GameUI\")
+onready var itemSprite=gameUI.get_node(\"ItemPanel/ItemSprite\")
+onready var world=get_node(\"../../\")
+
+func _ready() -> void: 
+	world.total_items+=1
+	
+
+func _on_ItemBox_body_entered(body: Node) -> void:
+	if str(playerStats.current_item)+\"Box\"==name:
+		playerStats.collected_items+=1
+		playerStats.current_item=\"\"
+		sprite.texture=load(\"res://Other/Boxes/\"+name+\"/\"+name+\"(filled).png\")
+		monitoring=false
+	
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[node name="ItemBox" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_ItemBox_body_entered"]

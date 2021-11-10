@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/GameUI.gd" type="Script" id=1]
+[ext_resource path="res://UI/Font.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.270588, 0.47451, 0.439216 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ItemPanel" type="Panel" parent="."]
+margin_left = 224.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 32.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSprite" type="Sprite" parent="ItemPanel"]
+position = Vector2( 12, 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ItemLabel" type="Label" parent="ItemPanel"]
+margin_top = 32.0
+margin_right = 24.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

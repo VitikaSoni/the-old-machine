@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/Controller/rightButton.png" type="Texture" id=1]
+[ext_resource path="res://UI/Controller/downButtonPressed.png" type="Texture" id=2]
+[ext_resource path="res://UI/Controller/upButtonPressed.png" type="Texture" id=3]
+[ext_resource path="res://UI/Controller/rightButtonPressed.png" type="Texture" id=4]
+[ext_resource path="res://UI/Controller/leftButton.png" type="Texture" id=5]
+[ext_resource path="res://UI/Controller/upButton.png" type="Texture" id=6]
+[ext_resource path="res://UI/Controller/downButton.png" type="Texture" id=7]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2( 8, 96 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 4 )
+action = "ui_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2( 48, 96 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 4 )
+action = "ui_right"
+
+[node name="UpButton" type="TouchScreenButton" parent="."]
+position = Vector2( 208, 80 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 3 )
+action = "ui_up"
+
+[node name="DownButton" type="TouchScreenButton" parent="."]
+position = Vector2( 208, 112 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 2 )
+action = "ui_down"
