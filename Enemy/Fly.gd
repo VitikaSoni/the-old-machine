@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
+export var speed=60
 var path=[]
 var threshold=8
 var nav=null
-export var speed=60
 var velocity=Vector2.ZERO
 
 func _ready() -> void:

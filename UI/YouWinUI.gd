@@ -6,6 +6,5 @@ func _ready() -> void:
 func _on_LevelMenuButton_pressed() -> void:
 	get_tree().change_scene("res://UI/MainMenu.tscn")
 
-
 func _on_RetryButton_pressed() -> void:
 	get_tree().change_scene("res://World/Levels/"+str(int(Main.current_level_name)+1)+".tscn")

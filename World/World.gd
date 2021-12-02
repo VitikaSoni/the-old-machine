@@ -1,6 +1,5 @@
 extends Node2D
 
-
 onready var nav=$Navigation2D
 onready var player=$Player
 onready var itemLabel=get_node("GameUI/ItemPanel/ItemLabel")
